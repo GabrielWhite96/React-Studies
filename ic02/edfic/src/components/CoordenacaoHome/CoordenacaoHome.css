@@ -1,0 +1,37 @@
+.coordenacao-home {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+}
+
+.sidebar h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 10px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.sidebar li:hover {
+    background-color: #ebebeb;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+}
