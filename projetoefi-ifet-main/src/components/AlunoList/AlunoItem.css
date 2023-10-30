@@ -1,0 +1,18 @@
+/* src/components/AlunoItem.css */
+
+.aluno-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.aluno-details span {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.aluno-actions button {
+    margin-left: 10px;
+}
