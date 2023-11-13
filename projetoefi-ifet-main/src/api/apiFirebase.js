@@ -183,3 +183,62 @@ export const handleImageUploadAluno = async (imageFile) => {
     return null;
   }
 };
+
+export const getTurmas = async () => {
+  try {
+    const querySnapshot = await getDocs(collection(db, "turmas"));
+    const data = querySnapshot.docs.map((doc) => ({
+      ...doc.data(),
+      id: doc.id,
+    }));
+    return data;
+  } catch (error) {
+    console.error("Erro ao buscar turmas:", error);
+    return [];
+  }
+};
+
+export const createTurma = async (turma) => {
+  try {
+    // Salvar os detalhes do turma no Firestore usando o UID como chave
+    await addDoc(collection(db, "turmas"), {
+      ...turma
+    });
+
+    console.log("Turma registrado com sucesso.");
+    return { ...turma};
+  } catch (error) {
+    console.error("Erro ao criar turma:", error);
+    return null;
+  }
+};
+
+export const updateTurma = async (docId, turma) => {
+  try {
+    const turmaRef = doc(db, "turmas", docId);
+
+    // Atualizar o turma usando setDoc com merge: true para apenas atualizar campos fornecidos
+    await setDoc(turmaRef, turma, { merge: true });
+
+    console.log("turma atualizado com sucesso");
+    return turma;
+  } catch (error) {
+    console.error("Erro ao atualizar turma:", error);
+    return null;
+  }
+};
+
+export const deleteTurma = async (uid) => {
+  try {
+    // Opcional: Deletar o usuário do sistema de autenticação
+    // await deleteUser(auth.currentUser);  // Descomente se quiser deletar o usuário
+    
+    // Deletar o turma do Firestore
+    const docRef = doc(db, "turmas", uid);
+    await deleteDoc(docRef);
+
+    console.log("Turma deletado com sucesso.");
+  } catch (error) {
+    console.error("Erro ao deletar turma:", error);
+  }
+};

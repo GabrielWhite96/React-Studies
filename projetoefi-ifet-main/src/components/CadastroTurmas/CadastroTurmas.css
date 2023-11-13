@@ -1,0 +1,69 @@
+.cadastro-turmas {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.title {
+    font-size: 2rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.add-btn {
+    display: block;
+    margin: 0 auto 20px auto;
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-btn:hover {
+    background-color: #0056b3;
+}
+
+.close-btn {
+    background-color: #FF4136;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    float: right;
+}
+
+.close-btn:hover {
+    background-color: #E70F00;
+}
+
+
+/* Adicione isso ao seu TurmaForm.css */
+.Modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 600px;
+    width: 90%; /* 90% da largura da viewport */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}

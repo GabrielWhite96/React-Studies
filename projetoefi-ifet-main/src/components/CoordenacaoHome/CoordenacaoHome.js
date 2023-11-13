@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import './CoordenacaoHome.css';
+import CadastroTurmas from '../CadastroTurmas';
 import CadastroProfessores from '../CadastroProfessores';
 import CadastroAlunos from '../CadastroAlunos';
 
@@ -17,6 +18,7 @@ function CoordenacaoHome() {
         </ul>
       </div>
       <div className="content">
+        {selectedContent === 'turma' && <CadastroTurmas />}
         {selectedContent === 'professor' && <CadastroProfessores />}
         {selectedContent === 'aluno' && <CadastroAlunos />}
 

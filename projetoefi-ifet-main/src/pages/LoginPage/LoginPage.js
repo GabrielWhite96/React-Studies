@@ -26,14 +26,18 @@ function LoginPage() {
     try {
       await signInWithEmailAndPassword(auth, email, password);
 
-      const emailProcurado = email;
-
       const professoresCollection = collection(db, 'professores');
       const alunosCollection = collection(db, 'alunos');
-      const professoresQuery = query(professoresCollection, where('email', '==', emailProcurado));
-      const alunosQuery = query(alunosCollection, where('email', '==', emailProcurado));
+      const professoresQuery = query(professoresCollection, where('email', '==', email));
+      const alunosQuery = query(alunosCollection, where('email', '==', email));
+      const professoresSnapshot = await getDocs(professoresQuery);
+      const alunosSnapshot = await getDocs(alunosQuery);
 
-      navigate("/coordenacao-home");  
+      if (!professoresSnapshot.empty) {
+        navigate("/coordenacao-home");  
+      } else if(!alunosSnapshot.empty) {
+        navigate("/alunos-home")
+      }
     } catch (err) {
       setError(err.message);
     }
