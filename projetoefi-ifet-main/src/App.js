@@ -1,6 +1,10 @@
 // src/App.js
 
 import React from 'react';
+import "./pages/styles/color.css";
+import "./pages/styles/font.css";
+import "./pages/styles/index.css";
+import "./pages/styles/tailwind.css";
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import LoginPage from './pages/LoginPage/LoginPage';
